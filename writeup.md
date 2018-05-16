@@ -111,5 +111,8 @@ THe video implementation takes into account 10 frames. Averages the heatmaps gen
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+The problems I faced were choosing the parameters for getting the features.  My intuition for all them isn't very good.  So, it seemed more like a guessing game.  After being satisfied with what I had my next biggest problem was filtering out the false positives. I could do it okay on the test images, but the video picked up a lot. So, finding thresholding values for the heatmaps and using 8-10 frames averaged seem to get most of them.
 
+My pipeline seems to be weak on the white car in the video at times and strong on darker areas.  However, the darker areas like shadows seemed to generate false positives briefly.
+
+TO make it more robust maybe tweaking the SVM and using decisions trees might help.  Maybe even trying a neural network.  I could experiment with the parameters for finding features more as well.
